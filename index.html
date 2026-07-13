@@ -1318,6 +1318,83 @@
     }
 }
 
+/*////////////////////////////////////////////*/
+/* --- ADAPTACIÓN EXCLUSIVA PARA CELULARES EN HORIZONTAL (LANDSCAPE) --- */
+@media (max-width: 900px) and (orientation: landscape) {
+    
+    /* 1. Reducir la barra de navegación para que no ocupe toda la pantalla */
+    .navbar {
+        padding: 6px 0 !important;
+    }
+
+    .navbar .container {
+        flex-direction: row !important; /* Vuelve a poner el logo a la izquierda y menú a la derecha */
+        justify-content: space-between !important;
+        gap: 0 !important;
+    }
+
+    /* 2. Compactar el Logo y la Firma */
+    .logo {
+        flex-wrap: nowrap !important; /* Evita que los elementos se vayan abajo */
+        justify-content: flex-start !important;
+        width: auto !important;
+        gap: 6px !important;
+    }
+
+    .logo-icon {
+        width: 24px !important; /* Icono más pequeño */
+        height: 24px !important;
+    }
+
+    .logo span:nth-of-type(1) {
+        font-size: 16px !important; /* Texto principal más compacto */
+    }
+
+    .logo span:nth-of-type(2) {
+        flex-basis: auto !important; /* Cancela el salto de línea obligatorio */
+        font-size: 10px !important; 
+        margin-left: 5px !important;
+        margin-top: 0 !important;
+    }
+
+    /* 3. Ajustar los Enlaces del Menú en una sola línea horizontal */
+    .nav-links {
+        flex-wrap: nowrap !important; 
+        gap: 10px !important;
+    }
+
+    .nav-links li a {
+        font-size: 12px !important;
+        padding: 2px 4px !important;
+    }
+
+    /* 4. Optimizar el Hero para pantallas con poca altura */
+    .hero {
+        padding: 20px 10px !important; /* Menos espacio arriba y abajo */
+        display: flex !important;
+        flex-direction: row !important; /* Pone el escudo a un lado y los textos al otro */
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 20px !important;
+    }
+
+    .hero-logo-icon {
+        width: 70px !important; /* Reduce considerablemente el escudo */
+        height: 70px !important;
+    }
+
+    .hero-logo-text {
+        font-size: 24px !important; /* Texto del Hero más pequeño */
+        text-align: left !important;
+    }
+
+    .hero-logo-subtitle, 
+    .hero-logo-subtitle1 {
+        font-size: 12px !important;
+        padding: 0 !important;
+        text-align: left !important;
+    }
+}
 
 
     </style>
