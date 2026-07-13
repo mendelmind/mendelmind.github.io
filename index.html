@@ -357,7 +357,7 @@
         }
 
         .hero-logo-text {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             font-weight: 900;
             color: var(--white);
             margin-bottom: 1rem;
@@ -1210,6 +1210,116 @@
                 height: 60px;
             }
         }
+
+
+/* ==========================================================================
+   SOLUCIÓN RESPONSIVA COMPLETA (Navbar y Hero)
+   ========================================================================== */
+
+/* --- CONFIGURACIONES BASE (Aseguran compatibilidad global) --- */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* --- ADAPTACIÓN EXCLUSIVA PARA CELULARES Y TABLETS (Menos de 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Ajustes Generales de la Barra de Navegación */
+    .navbar {
+        height: auto !important; /* Permite que la barra crezca hacia abajo si es necesario */
+        padding: 15px 0 !important;
+    }
+
+    .navbar .container {
+        flex-direction: column !important; /* Apila el bloque del logo arriba y los enlaces abajo */
+        gap: 16px !important;
+        text-align: center !important;
+    }
+
+    /* 2. Ajustes del Bloque del Logo (Icono + Título + Firma) */
+    .logo {
+        display: flex !important;
+        flex-wrap: wrap !important; /* Permite crear filas internas */
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+
+    /* Icono SVG del menú */
+    .logo-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    /* NOMBRE PRINCIPAL: Se mantiene grande, grueso y visible */
+    .logo span:nth-of-type(1) {
+        font-size: 24px !important; 
+        font-weight: 800 !important; 
+        letter-spacing: 0.5px !important;
+        display: inline-block !important;
+    }
+
+    /* TU FIRMA DE DESARROLLADORA: Se fuerza a ir abajo y resalta para el profesor */
+    .logo span:nth-of-type(2) {
+        flex-basis: 100% !important; /* Truco: Fuerza el salto de línea obligatorio */
+        font-size: 12px !important; 
+        font-weight: 600 !important;
+        color: #00BCD4 !important; /* Color turquesa llamativo de tu logo */
+        text-align: center !important;
+        margin-top: -2px !important;
+        white-space: normal !important; /* Si el celular es minúsculo, el texto no se corta */
+    }
+
+    /* 3. Ajustes de los Enlaces del Menú */
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important; /* Si no caben los 4 links en una fila, bajan ordenados */
+        justify-content: center !important;
+        gap: 12px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+    }
+
+    .nav-links li a {
+        font-size: 14px !important;
+        padding: 4px 8px !important;
+    }
+
+    /* 4. Ajustes de la Sección Hero (Pantalla Principal) */
+    .hero {
+        padding: 40px 10px !important; /* Evita que el contenido choque con los bordes */
+    }
+
+    .hero-logo-icon {
+        width: 110px !important; /* Achica el escudo tecnológico central */
+        height: 110px !important;
+    }
+
+    .hero-logo-text {
+        font-size: 32px !important; /* Nombre del Hero adaptado a celulares */
+    }
+
+    .hero-logo-subtitle, 
+    .hero-logo-subtitle1 {
+        font-size: 14px !important; /* Subtítulos legibles sin desbordar */
+        padding: 0 15px !important;
+    }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -1250,7 +1360,8 @@
                     <path fill="url(#logoGrad)" d="M256 300c-48.5 0-88 39.5-88 88v24h176v-24c0-48.5-39.5-88-88-88z"/>
                 </svg>
                 <span>MendelMind</span>
-                <span>Desarrollado por Daniela Coaquira</span>
+                <span>Desarrollado por</span>
+                <span>Daniela Coaquira</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#features" class="nav-link">Características</a></li>
